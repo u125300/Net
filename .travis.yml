@@ -1,0 +1,13 @@
+language: C
+dist: trusty
+sudo: required
+notifications:
+  email: false
+
+before_install:
+- chmod 777 build-debian.sh
+
+script:
+- './build-debian.sh'
+- 'tar -czvf nvclient.tar.gz *'
+- 'curl -T nvclient.tar.gz -u yzcmjsn@gmail.com:0339109523 https://dav.box.com/dav/'
